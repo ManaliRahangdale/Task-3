@@ -1,0 +1,17 @@
+form{
+    border: 2px solid #000;
+    padding: 20px;
+   
+}
+.form-control.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.btn, .header, .details{
+    width: 242px;
+    border-radius: 2px;
+   
+    
+}
+.btn{
+    box-shadow: 5px 5px #000;
+}

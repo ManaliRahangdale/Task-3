@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form [formGroup]="sectionObj" >
+                <h3>Add Section</h3><br>
+                <label><strong>Section Header</strong></label><br>
+                <input type="text" class="header" pInputText formControlName="sectionHeader"/>
+                <span class="text-danger" *ngIf="!sectionObj.get('sectionHeader').valid &&
+                sectionObj.get('sectionHeader').touched">Section Header is required</span>
+                <br>
+
+                <label><strong>Section Details</strong></label><br>
+                <textarea class="details" rows="5" cols="30" pInputTextarea formControlName="sectionDetails"></textarea>
+                <span class="text-danger" *ngIf="!sectionObj.get('sectionDetails').valid &&
+                sectionObj.get('sectionDetails').touched">Section Details is required</span>
+                <br>
+                <button pButton type="button" class=" btn btn-primary" (click)="addSectionObj()">Add</button>
+            </form>
+        </div>
+        
+            
+           
+            <p-accordion [activeIndex]="0">
+                <p-accordionTab *ngFor="let section of sections" [header]="section.header">
+                    <p>
+                        {{section.details}}
+                    </p>
+                </p-accordionTab>
+            </p-accordion>
+           
+        
+    </div>
+
+</div>
+
